@@ -44,8 +44,66 @@
       .marketing p + h4 {
         margin-top: 28px;
       }
+
+      .pushme img:hover {
+        border-radius: 50%;
+        box-shadow: 0 0 0 5px rgba(235,89,42,0.5);
+        cursor: pointer;
+      }
+
+      .pushme {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        vertical-align: text-top;
+        margin-right: 0px;
+        text-indent: 0;
+      }
+      .pushme a {
+        color: white;
+       }
+
+      .pushme a {
+        background-color: #08e;
+        border-radius: 100% 100% 100% 100%;
+        box-shadow: 0 0 0 1px rgba(235,89,42,0.5);
+        font-size: 50px;
+        padding: 0px;
+        overflow: hidden;
+        height: 150px;
+        width: 150px;
+        line-height: 150px;
+        display: inline-block;
+        -webkit-transition: all 0.3s ease-out; 
+        -moz-transition: all 0.3s ease-out; 
+        -o-transition: all 0.3s ease-out; 
+        -ms-transition: all 0.3s ease-out; 
+        transition: all 0.3s ease-out;
+
+      }
+      .pushme a:active {
+        -webkit-transform: rotate(-15deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        background: hotpink;
+      }
+
+      .pushme a:hover {
+        border-radius: 50%;
+        /*box-shadow: 0 0 0 5px rgba(0,114,208,0.5);*/
+        box-shadow: 0 0 0 10px rgba(255,255,0,0.75);
+        cursor: pointer;
+        color: yellow;
+      }
+     .lead { 
+        margin: 20px 0;
+      }
     </style>
     <link href="vendor/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -62,7 +120,7 @@
 
   <body>
 
-    <div class="container-narrow">
+    <div class="container">
      
       <div class="masthead">
         
@@ -79,10 +137,18 @@
       <hr>
 
       <div class="jumbotron">
-        <h1>Meetings and event invites integrated with Twitter.</h1>
-        <p class="lead">Calendar meet Twitter, Twitter meet Calendar.</p>
-        <p class="lead">Let's do lunch..</p>
-        <a class="btn btn-large btn-success" href="#">Sign up today</a>
+        <h1>Invites integrated with Twitter</h1>
+        <p class="lead">Calendar meet Twitter, Twitter meet Calendar</p>
+        <!-- <a class="btn btn-large btn-success" href="#">Sign up today</a> -->
+        <div class="pushme">
+          <a href="#"><i class="icon-twitter-1" style="
+    border-left: dotted yellowgreen 5px;
+    border-bottom: solid 125px green;
+    height: 60px;
+    width: 14px;
+"></i></a>
+        </div>
+        <p class="lead"><strong>Click to Get Started!</strong></p>
       </div>
 
       <hr>
