@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Twinvite - Meetings and events, on Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Twinvite - Meetings and events, on Twitter">
+    <meta name="author" content="Twinvite">
+
+    <!-- Le styles -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="vendor/bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="vendor/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="vendor/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="vendor/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="vendor/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="vendor/bootstrap/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+     
+
+			<div class="masthead">
+				<% if logged_in %>
+				<div class="btn-group pull-right">
+          <button class="btn btn-large btn-inverse dropdown-toggle" data-toggle="dropdown"><%= info['name'] %> <span class="caret"></span></button>
+
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" href="#"><i class="icon-cog"></i> Profile</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" href="/logout"><i class="icon-off"></i> Logout</a></li>
+          </ul>
+        </div>
+
+				<img class="img-rounded thumb44 pull-right" src="<%= info['image'] %>" />
+	      <% end %>
+
+        <h3 class="muted">Twinvite</h3>
+      </div>
+
+      <hr>
+
+			<div id="content_wrapper">
+			  <!-- Flash notices -->
+			  <% [:message, :alert, :info, :notice, :error, :warning].each do |flash_type| %>
+			    <% if flash.has?(flash_type) %>
+						<div class="alert alert-block alert-<%= flash_type %>">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			        <%= flash[flash_type] %>
+						</div>
+			    <% end %>
+			  <% end %>
+
+			  <!-- Injected Content -->
+        <%= yield %>
+			
+			</div>
+
+      <hr>
+
+      <div class="footer">
+        <p>© Twinvite 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
